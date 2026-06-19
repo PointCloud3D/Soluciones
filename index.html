@@ -187,6 +187,22 @@
   </style>
 </head>
 
+  
+<script>
+(function(){
+  const header = document.querySelector('.centerMenu');
+  if(!header) return;
+  function updateHeaderVar(){
+    const h = Math.ceil(header.getBoundingClientRect().height || 72);
+    document.documentElement.style.setProperty('--header-height', h + 'px');
+  }
+  window.addEventListener('load', updateHeaderVar);
+  window.addEventListener('resize', updateHeaderVar);
+  // Si tenés un toggle de menú móvil, llamá updateHeaderVar() tras abrir/cerrar
+})();
+</script>
+
+  
 <body>
   <div class="contenedor">
     <div class="centerMenu">
